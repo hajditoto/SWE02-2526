@@ -1,5 +1,13 @@
 function generateStudentId() {
-    return 'STU-' + Date.now() + '-' + Math.random().toString(36).substring(2, 7).toUpperCase();
+    const students = JSON.parse(localStorage.getItem('students')) || [];
+    const existingIds = students.map(s => s.id);
+
+    let newId;
+    do {
+        newId = Math.floor(Math.random() * 15000) + 1; // Random number between 1 and 15000
+    } while (existingIds.includes(newId));
+
+    return newId;
 }
 
 function saveStudentInfo(event){

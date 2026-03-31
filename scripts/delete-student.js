@@ -1,5 +1,5 @@
 function loadStudentInfo() {
-    const studentId = localStorage.getItem('studentToDeleteId');
+    const studentId = parseInt(localStorage.getItem('studentToDeleteId'));
 
     if (!studentId) {
         alert('No student selected for deletion');
@@ -22,7 +22,7 @@ function loadStudentInfo() {
 }
 
 function confirmDelete() {
-    const studentId = localStorage.getItem('studentToDeleteId');
+    const studentId = parseInt(localStorage.getItem('studentToDeleteId'));
     let students = JSON.parse(localStorage.getItem('students')) || [];
 
     // Filter out the student to delete

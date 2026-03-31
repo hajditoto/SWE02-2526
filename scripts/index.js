@@ -38,8 +38,8 @@ function fetchStudentsFromLocalStorage(){
                <td><strong>${average}</strong></td>
                <td class="${statusClass}"><strong>${status}</strong></td>
                <td>
-                   <button class="btn btn-sm btn-warning me-1" onclick="editStudent('${student.id}')">Edit</button>
-                   <button class="btn btn-sm btn-danger" onclick="deleteStudent('${student.id}')">Delete</button>
+                   <button class="btn btn-sm btn-warning me-1" onclick="editStudent(${student.id})">Edit</button>
+                   <button class="btn btn-sm btn-danger" onclick="deleteStudent(${student.id})">Delete</button>
                </td>
            </tr>
        `;

@@ -1,5 +1,5 @@
 function loadStudentData() {
-    const studentId = localStorage.getItem('studentToEditId');
+    const studentId = parseInt(localStorage.getItem('studentToEditId'));
 
     if (!studentId) {
         alert('No student selected for editing');
@@ -27,7 +27,7 @@ function loadStudentData() {
 function updateStudent(event) {
     event.preventDefault();
 
-    const studentId = localStorage.getItem('studentToEditId');
+    const studentId = parseInt(localStorage.getItem('studentToEditId'));
     const students = JSON.parse(localStorage.getItem('students')) || [];
     const studentIndex = students.findIndex(s => s.id === studentId);
 
